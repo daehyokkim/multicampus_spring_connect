@@ -20,8 +20,13 @@
       <result property="joinDate" column="joinDate" />
    </resultMap> -->
 
-
-	<select id="selectAllMemberList" resultMap="memResult">
+	<select id="selectAllMemberById" resultType="memberVO">
+      <![CDATA[
+         select * from t_member	where id = #{id} 	
+      ]]>
+	</select>
+    
+	<select id="selectAllMemberList" resultType="memberVO">
       <![CDATA[
          select * from t_member	order by joinDate desc	 	
       ]]>

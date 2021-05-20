@@ -8,22 +8,23 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
 	function checkID(){
-		var id = $("#userId").val();
+		var id = $("#userId").val()
 		alert('check '+id);
 		$.ajax(
 			{
 	         type:"get",
-	         url:"/rest/member/checkId.do",
+	         url:"/rest/member/check.do",
 	         contentType: "application/json",
 	         data :{"userId":id},
 		     success:function (data,textStatus){
-		    	 alert(data);
-		    	 var obj = JSON.parse(data);
-		    	 alert(obj.result);
-		    	 if(obj.result){
-		    		 $('#message').text(id+" 사용가능");
-		    	 } else {
-		    		$('#message').text(id+" 사용불가능");
+		    	 obj = JSON.parse(data);
+		    	 if(obj.result == "true"){
+		    		 alert(data);
+			    	 $('#message').text("사용가능한 아이디 입니다.");	 
+		    	 }
+		    	 else{
+		    		 alert("중복된 아이디 입니다.");
+		    		 $('#message').text(id);	
 		    	 }
 		     },
 		     error:function(data,textStatus){
@@ -48,3 +49,9 @@
 	</form>
 </body>
 </html>
+
+
+
+
+
+

@@ -26,24 +26,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class StartController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(StartController.class);
-
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
-	@RequestMapping(value = "/start", method = RequestMethod.GET)
-	public String start(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-		
-		return "start";
-	}
+//mc.sn.rest.controller/MemberControllerImpl.java로 메서드를 이동~!!
 	
-	@RequestMapping(value = "/res1")
-	@ResponseBody
-	public String res1(@RequestParam("userId") String userId, 
-	           HttpServletRequest request, HttpServletResponse response) throws Exception {
-			System.out.println("userId "+userId);
-		return userId;
-	}
-	
+//	@RequestMapping(value = "/start", method = RequestMethod.GET)
+//	public String start(Locale locale, Model model) {	
+//		return "start";
+//	}
+//	
+//	@RequestMapping(value = "/res1")
+//	@ResponseBody
+//	public String res1(@RequestParam("userId") String userId, 
+//	           HttpServletRequest request, HttpServletResponse response) throws Exception {
+//			System.out.println("userId "+userId);
+//		return userId;
+//	}
+//	
 }
